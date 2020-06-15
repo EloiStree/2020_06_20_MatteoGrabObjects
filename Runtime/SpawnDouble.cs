@@ -6,13 +6,13 @@ public class SpawnDouble : MonoBehaviour
 {
     public GameObject m_prefab;
     
-    public int cpt = 0;
+    public int m_counter = 0;
     public Vector3 m_offsetForSpawn;
 
     public void SpawnCopy()
     {
-        cpt++;
-        SpawnPrefab(m_prefab, m_offsetForSpawn * cpt);
+        m_counter++;
+        SpawnPrefab(m_prefab, m_offsetForSpawn * m_counter);
     }
 
     void SpawnPrefab(GameObject prefab, Vector3 offset)
@@ -22,7 +22,7 @@ public class SpawnDouble : MonoBehaviour
 
     public void ResetCpt()
     {
-        cpt = 0;
+        m_counter = 0;
     }
 
     void Reset()

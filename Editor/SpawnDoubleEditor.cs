@@ -18,7 +18,7 @@ public class SpawnDoubleEditor : Editor
 			_instance.SpawnCopy();
 		}
 
-		if (GUILayout.Button("Reset compteur"))
+		if (GUILayout.Button("Reset counter"))
 		{
 			_instance.ResetCpt();
 		}
