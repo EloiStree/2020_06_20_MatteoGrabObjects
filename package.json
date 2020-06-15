@@ -1,0 +1,10 @@
+{
+  "name": "be.matteohelleux.matteotoolboxdemo",
+  "displayName": "Matteo Toolbox Demo",
+  "version": "0.0.1",
+  "unity": "2018.1",
+  "description": "This is my toolbox",
+  "keywords": ["Script","Tool"],
+  "category": "Script",
+  "dependencies":{}
+}
