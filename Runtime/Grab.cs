@@ -75,12 +75,12 @@ public class Grab : MonoBehaviour
     {
         _grabbed._gameObject.transform.parent = _grabbed._previousParent;
         _grabbed._rigidbody.isKinematic = false;
-        //
+        Vector3 changePositionFromLastFrame = transform.position - _previousPosition;
+        //float angle = Quaternion.Angle(transform.rotation, _previousRotation);
+        _grabbed._rigidbody.AddRelativeForce(changePositionFromLastFrame /(float)Time.deltaTime, ForceMode.Impulse);
+        _grabbed._rigidbody.AddRelativeTorque(changePositionFromLastFrame / (float)Time.deltaTime, ForceMode.Impulse);
 
-        _grabbed._rigidbody.velocity = _myRigidbody.velocity;
-        _grabbed._rigidbody.angularVelocity = _myRigidbody.angularVelocity;
-
-        //
+        
         _grabbed._gameObject.GetComponent<FollowHand>().enabled = false;
         _canGrab = true;
     }
