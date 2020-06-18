@@ -51,24 +51,33 @@ public class Grab : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject != _grabbed._gameObject)
+        if (other.gameObject.transform.parent != transform)
+        {
+            Debug.Log("TriggerChange");
             _grabbed = new GrabbedProp { _gameObject = other.gameObject, _previousParent = other.transform.parent, _rigidbody = other.gameObject.TryGetComponent(out Rigidbody rigidbody) ? rigidbody : other.gameObject.AddComponent<Rigidbody>() };
+        }
     }
     private void OnTriggerExit(Collider other)
     {
-        _grabbed = new GrabbedProp();
+        if (other.gameObject.transform.parent != transform)
+        {
+            _grabbed = new GrabbedProp();
+        }
     }
 
     public void GrabItem()
     {
-        _canGrab = false;
-        _grabbed._rigidbody.isKinematic = true;
-        _grabbed._gameObject.transform.parent = _myHand;
-        if (!_grabbed._gameObject.TryGetComponent(out FollowHand followHand))
-        {
-            followHand = _grabbed._gameObject.AddComponent<FollowHand>();
+        if (_grabbed._gameObject != null) 
+        { 
+            _canGrab = false;
+            _grabbed._rigidbody.isKinematic = true;
+            _grabbed._gameObject.transform.parent = _myHand;
+            if (!_grabbed._gameObject.TryGetComponent(out FollowHand followHand))
+            {
+                followHand = _grabbed._gameObject.AddComponent<FollowHand>();
+            }
+            followHand._handTransform = _myHand;
         }
-        followHand._handTransform = _myHand;
     }
 
     public void ReleaseGrabItem()
@@ -88,7 +97,7 @@ public class Grab : MonoBehaviour
 
     public void SetGrab()
     {
-        grabbing = true;
+         grabbing = true;
     }
 
     public void UnsetGrab()
