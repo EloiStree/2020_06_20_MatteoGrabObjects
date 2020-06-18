@@ -13,5 +13,9 @@ public class DebugGrabKeyboard : MonoBehaviour
         {
             _grab.SetGrab();
         }
+        if (Input.GetKeyUp(_input))
+        {
+            _grab.SetGrab(false);
+        }
     }
 }

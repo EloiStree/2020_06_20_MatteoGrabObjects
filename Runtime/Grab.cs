@@ -95,8 +95,9 @@ public class Grab : MonoBehaviour
     }
 
 
-    public void SetGrab()
+    public void SetGrab(bool pressing = true)
     {
+        if(pressing)
          grabbing = true;
     }
 
