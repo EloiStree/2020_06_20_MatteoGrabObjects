@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEditor;
 
+
 [CustomEditor(typeof(SpawnDouble))]
 public class SpawnDoubleEditor : Editor
 {
@@ -24,4 +25,3 @@ public class SpawnDoubleEditor : Editor
 		}
 	}
 }
-
