@@ -5,7 +5,7 @@ using UnityEngine;
 public class SphereToMultiGrabRadius : MonoBehaviour
 {
     public MultiGrab m_multiGrab;
-    public SphereCollider m_sphereCollider;
+    public Transform m_sphereScale;
     public bool m_refeshRadiusInStart;
     public bool m_refeshRadiusInUpdate;
     void Start()
@@ -24,8 +24,17 @@ public class SphereToMultiGrabRadius : MonoBehaviour
     }
     private void RefreshRadius()
     {
-        if(m_multiGrab!=null  && m_sphereCollider!=null )
-             m_multiGrab.SetRadius(m_sphereCollider.radius);
+        if (m_multiGrab != null && m_sphereScale != null)
+        {
+            float maxDistance = m_sphereScale.lossyScale.x;
+            if (maxDistance < m_sphereScale.lossyScale.y)
+                maxDistance = m_sphereScale.lossyScale.y;
+            if (maxDistance < m_sphereScale.lossyScale.z)
+                maxDistance = m_sphereScale.lossyScale.z;
+
+
+             m_multiGrab.SetRadius(maxDistance);
+        }
     }
     private void OnValidate()
     {

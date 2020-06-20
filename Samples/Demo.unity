@@ -1261,6 +1261,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2075591208}
     m_Modifications:
+    - target: {fileID: 1719223377, guid: 96de751103717344782ffe7a72fb587f, type: 3}
+      propertyPath: m_useRotation
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1719223377, guid: 96de751103717344782ffe7a72fb587f, type: 3}
+      propertyPath: m_forceMultiplictorRotation
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 1719223377, guid: 96de751103717344782ffe7a72fb587f, type: 3}
+      propertyPath: m_forceCumulated.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1007536848765782596, guid: 96de751103717344782ffe7a72fb587f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1335,7 +1347,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8129747210809736949}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1346,7 +1358,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: f0480c2bdee79f4419142f8e5858838a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1384,7 +1396,7 @@ Transform:
   m_GameObject: {fileID: 8129747210809736949}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_LocalScale: {x: 6.3719954, y: 6.3719954, z: 6.3719954}
   m_Children: []
   m_Father: {fileID: 806466544}
   m_RootOrder: 0
@@ -1454,7 +1466,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 0
   serializedVersion: 2
-  m_Radius: 4
+  m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &8129747210809736952
 MonoBehaviour:
@@ -1469,7 +1481,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_multiGrab: {fileID: 8129747210809736953}
-  m_sphereCollider: {fileID: 8129747210809736951}
+  m_sphereScale: {fileID: 8129747210809736946}
   m_refeshRadiusInStart: 1
   m_refeshRadiusInUpdate: 0
 --- !u!114 &8129747210809736953
@@ -1489,5 +1501,11 @@ MonoBehaviour:
   m_grabbableLayer:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_radius: 4
+  m_radius: 6.3719954
   m_grabbed: []
+  m_goingToGrab:
+    m_PersistentCalls:
+      m_Calls: []
+  m_goingToRelease:
+    m_PersistentCalls:
+      m_Calls: []

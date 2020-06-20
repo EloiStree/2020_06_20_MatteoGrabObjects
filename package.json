@@ -1,9 +1,9 @@
 {
-  "name": "be.captainbateau.bateautoolboxdemo",
-  "displayName": "Matteo Toolbox",
+  "name": "be.eloistree.multiobjectsgrabber",
+  "displayName": "Multi Objects Grabber",
   "version": "0.0.1",
   "unity": "2018.1",
-  "description": "This is my toolbox",
+  "description": "Allows to grab objects in the scene that own a grab tag.",
   "keywords": ["Script","Tool"],
   "category": "Script",
   "dependencies":{}

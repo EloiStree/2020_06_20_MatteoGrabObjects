@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1007536848765782601}
   - component: {fileID: 1007536848765782597}
   - component: {fileID: 5620882269542630903}
+  - component: {fileID: 1719223377}
   m_Layer: 0
   m_Name: Grabbable Object Test
   m_TagString: Untagged
@@ -150,6 +151,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1719223377}
+        m_MethodName: StartRecordingForce
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   m_onReleased:
     m_PersistentCalls:
       m_Calls:
@@ -175,3 +187,36 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1719223377}
+        m_MethodName: ApplyCumulatedForce
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1719223377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1007536848765782607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98dcdf377cde33644bfd73cd47f9fef6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_toObserve: {fileID: 1007536848765782596}
+  m_toApplyOn: {fileID: 1007536848765782597}
+  m_forceByDeltaMove: 3
+  m_forceMultiplictorRotation: 1
+  m_forceCumulated: {x: 0, y: 0, z: 1}
+  m_moveForce: 1
+  m_useRotation: 0
+  m_rotationForceCumulated: {x: 0, y: 0, z: 0}
+  m_rotateForce: 1
+  m_recordForce: 0

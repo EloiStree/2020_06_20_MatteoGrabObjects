@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class MultiGrab : MonoBehaviour
 {
@@ -22,6 +23,9 @@ public class MultiGrab : MonoBehaviour
     GrabbableTag[] m_grabbed;
     bool grabbing = false;
 
+    public UnityEvent m_goingToGrab;
+    public UnityEvent m_goingToRelease;
+
 
 
     private void Reset()
@@ -33,6 +37,7 @@ public class MultiGrab : MonoBehaviour
 
     public void GrabItem()
     {
+        m_goingToGrab.Invoke();
         m_grabbed = GetGrabbableInZone();
         
         for (int i = 0; i < m_grabbed.Length; i++)
@@ -63,6 +68,7 @@ public class MultiGrab : MonoBehaviour
 
     public void ReleaseGrabItem()
     {
+        m_goingToRelease.Invoke();
         for (int i = 0; i < m_grabbed.Length; i++)
         {
             ApplyReleased(m_grabbed[i]);
