@@ -26,11 +26,11 @@ public class SphereToMultiGrabRadius : MonoBehaviour
     {
         if (m_multiGrab != null && m_sphereScale != null)
         {
-            float maxDistance = m_sphereScale.lossyScale.x;
-            if (maxDistance < m_sphereScale.lossyScale.y)
-                maxDistance = m_sphereScale.lossyScale.y;
-            if (maxDistance < m_sphereScale.lossyScale.z)
-                maxDistance = m_sphereScale.lossyScale.z;
+            float maxDistance = m_sphereScale.lossyScale.x/2f;
+            if (maxDistance < m_sphereScale.lossyScale.y / 2f)
+                maxDistance = m_sphereScale.lossyScale.y / 2f;
+            if (maxDistance < m_sphereScale.lossyScale.z / 2f)
+                maxDistance = m_sphereScale.lossyScale.z / 2f;
 
 
              m_multiGrab.SetRadius(maxDistance);
